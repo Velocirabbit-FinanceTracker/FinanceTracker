@@ -13,8 +13,8 @@ return (
         <span className='incomeName'>{income.item} </span>
         <span className='incomeAmt'>{income.value}</span>
         <span className='recurring'>Occurs {income.recurring}</span> 
-        <span><button id={income._id} className='editButton' onClick={async (e)=> await toggleEdit(e)}>Edit</button></span>
-        <span><button id={income._id} className='deleteButton' onClick={deletePost}>Delete</button></span>
+        <span><button id={income._id} className='button' onClick={async (e)=> await toggleEdit(e)}>Edit</button></span>
+        <span><button id={income._id} className='button' onClick={deletePost}>Delete</button></span>
     </div>
 )
 }

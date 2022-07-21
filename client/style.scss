@@ -73,6 +73,24 @@ body {
   }
 }
 
+.button {
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color: #fff;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  border-radius: .75rem;
+  font-size: .75rem;
+  font-weight: 600;
+}
+
+.button:hover {
+  background-color: #b6b8bb;
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+}
+
 #assets {
   align-self: center;
   padding: 10vw;
@@ -325,6 +343,7 @@ body {
     }
     div:hover {
       background-color: rgba(255, 255, 255, 0.428);
+      cursor: pointer;
       .nav-link {
         color: black;
       }
@@ -422,6 +441,20 @@ body {
       }
       button {
         width: 100%;
+        border: 1px solid transparent;
+        cursor: pointer;
+        background-color: #fff;
+        box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+        border-radius: .75rem;
+        font-size: .75rem;
+        font-weight: 600;
+      }
+      button:hover {
+        background-color: #b6b8bb;
+        transform: scale(0.98);
+        /* Scaling button to 0.98 to its original size */
+        box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+        /* Lowering the shadow */
       }
       input,
       option,

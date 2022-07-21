@@ -155,7 +155,7 @@ const Incomes = (props) => {
           <span>
             <button
               id={income._id}
-              className="editButton"
+              className="button"
               onClick={async (e) => await toggleEdit(e)}
             >
               Edit
@@ -164,7 +164,7 @@ const Incomes = (props) => {
           <span>
             <button
               id={income._id}
-              className="deleteButton"
+              className="button"
               onClick={deletePost}
             >
               Delete
@@ -200,7 +200,7 @@ const Incomes = (props) => {
               <option value="Annually">Annually</option>
             </select>
             <span>
-              <button id={income._id} type="submit" className="editButton">
+              <button id={income._id} type="submit" className="button">
                 Confirm
               </button>
             </span>
@@ -208,7 +208,7 @@ const Incomes = (props) => {
             <span>
               <button
                 id={income._id}
-                className="cancelButton"
+                className="button"
                 onClick={cancelEdit}
               >
                 Cancel

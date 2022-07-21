@@ -100,9 +100,9 @@ const Login = props => {
                 <input id="password" type="password" placeholder="Password" onChange={e => setPassword(e.target.value)}/>
                 <input type="text" placeholder="Confirm Password" />
               </div>
-              <button id="signup" onClick={signUpBtn}>Sign up</button>
+              <button id="signup" className="button" onClick={signUpBtn}>Sign up</button>
               {/* Button to shift over to login page */}
-              <button id="goLeft" className="off" onClick={() => slideDirection('right')}>Login</button>
+              <button id="goLeft" className="button" onClick={() => slideDirection('right')}>Login</button>
               {/* <button type="button" className="login-with-google-btn" onClick="window.location.href='/auth/google'">
                 Sign in with Google
               </button> */}
@@ -116,9 +116,9 @@ const Login = props => {
                 <input id="email" type="text" placeholder="E-mail" onChange={e => setEmail(e.target.value)}/>
                 <input id="password" type="password" placeholder="Password" onChange={e => setPassword(e.target.value)}/>
               </div>
-              <button id="login" type="submit" onClick={loginBtn}>Log in</button>
+              <button id="login" className="button" type="submit" onClick={loginBtn}>Log in</button>
               {/* Button to shift over to sign-up page */}
-              <button id="goRight" className="off" onClick={() => slideDirection('left')}>Sign Up</button>
+              <button id="goRight" className="button" onClick={() => slideDirection('left')}>Sign Up</button>
               {/* <button type="button" className="login-with-google-btn" onClick="window.location.href='/auth/google'">
                 Sign up with Google
               </button> */}

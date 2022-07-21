@@ -37,8 +37,8 @@ const Expenses = props => {
                             <span className='expenseName'>{expense.item} </span>
                             <span className='expenseAmt'>{expense.value}</span>
                             <span className='recurring'>Occurs {expense.recurring}</span> 
-                            <span><button id={expense._id} className='editButton' onClick={editPost}>Edit</button></span>
-                            <span><button id={expense._id} className='deleteButton' onClick={deletePost}>Delete</button></span>
+                            <span><button id={expense._id} className='button' onClick={editPost}>Edit</button></span>
+                            <span><button id={expense._id} className='button' onClick={deletePost}>Delete</button></span>
                         </div>
                     );
                 }
