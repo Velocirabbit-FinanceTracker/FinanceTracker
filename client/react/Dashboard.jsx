@@ -127,6 +127,7 @@ const Dashboard = props => {
                 {/* Rendering the graph for the dashboard via chartJS*/}
                 
                 <div className="Graph">
+
                 <div className="charts">
                   <div className="title">Chart Types</div>
                   <div className='select'>
