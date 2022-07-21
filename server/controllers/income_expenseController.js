@@ -67,6 +67,7 @@ income_expenseController.updateExpense = async (req, res, next) => {
 // adding functionality to remove expense
 income_expenseController.removeExpense = async (req, res, next) => {
   try {
+    console.log('Getting here!!!!')
     const { id } = req.params;
     const params = [id];
     // console.log('item', item, 'user_id', user_id);
