@@ -3,7 +3,7 @@ import NavBar from './NavBar.jsx';
 import axios from 'axios';
 
 const Incomes = (props) => {
-  const { incomesList, changeIncomesList } = props;
+  const { incomesList, changeIncomesList, name } = props;
   console.log('Props: ', props)
 
   const [userID, setID] = useState('');
@@ -153,7 +153,7 @@ const Incomes = (props) => {
           <span className="incomeName">{income.item} </span>
           <span className="incomeAmt">{income.value}</span>
           <span className="recurring">Occurs {income.recurring}</span>
-          <span className="incomeDate">{income.created.slice(0,10)}</span>
+          <span className="incomeDate">{income.created.slice(0, 10)}</span>
           <span>
             <button
               id={income._id}
@@ -201,7 +201,7 @@ const Incomes = (props) => {
               <option value="Monthly">Monthly</option>
               <option value="Annually">Annually</option>
             </select>
-            <span className="incomeDate">{income.created.slice(0,10)}</span>
+            <span className="incomeDate">{income.created.slice(0, 10)}</span>
 
             <span>
               <button id={income._id} type="submit" className="button">
@@ -226,42 +226,48 @@ const Incomes = (props) => {
 
   // renders all the income a user has and the input fields for adding a new income
   return (
-    <div className="income-page">
-      <NavBar />
-      <div className="history-container">{incomeArr}</div>
-      <div className="input-div">
-        <label>Income Name: </label>
-        <input
-          type="text"
-          name="incomeName"
-          placeholder="Income item"
-          id="incomeItem"
-          onChange={(e) => setItem(e.target.value)}
-        />
-        <label>Amount: </label>
-        <input
-          type="text"
-          name="incomeAmount"
-          placeholder="Income amount"
-          id="incomeAmt"
-          onChange={(e) => setAmt(e.target.value)}
-        />
-        <label>Reoccuring? </label>
-        <select
-          name="reoccurence"
-          id="expenseRec"
-          defaultValue="Once"
-          onChange={(e) => setRec(e.target.value)}
-        >
-          <option value="Once">Once</option>
-          <option value="Daily">Daily</option>
-          <option value="Weekly">Weekly</option>
-          <option value="Monthly">Monthly</option>
-          <option value="Annually">Annually</option>
-        </select>
-        <button onClick={addIncome}>Add Income</button>
+    <>
+      <div className='aboveNav'>
+        <span className="titleName">Finance Tracker</span>
+        <span className="greeting">Hello, {name}</span>
       </div>
-    </div>
+      <div className="income-page">
+        <NavBar />
+        <div className="history-container">{incomeArr}</div>
+        <div className="input-div">
+          <label>Income Name: </label>
+          <input
+            type="text"
+            name="incomeName"
+            placeholder="Income item"
+            id="incomeItem"
+            onChange={(e) => setItem(e.target.value)}
+          />
+          <label>Amount: </label>
+          <input
+            type="text"
+            name="incomeAmount"
+            placeholder="Income amount"
+            id="incomeAmt"
+            onChange={(e) => setAmt(e.target.value)}
+          />
+          <label>Reoccuring? </label>
+          <select
+            name="reoccurence"
+            id="expenseRec"
+            defaultValue="Once"
+            onChange={(e) => setRec(e.target.value)}
+          >
+            <option value="Once">Once</option>
+            <option value="Daily">Daily</option>
+            <option value="Weekly">Weekly</option>
+            <option value="Monthly">Monthly</option>
+            <option value="Annually">Annually</option>
+          </select>
+          <button onClick={addIncome}>Add Income</button>
+        </div>
+      </div>
+    </>
   );
 };
 

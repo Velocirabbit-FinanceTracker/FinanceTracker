@@ -35,39 +35,39 @@ const App = () => {
   return (
     <main className='App'>
       {
-      //If user is not logged in,
-      !userLoggedIn
-        // Render the login page,
-        ? <> 
+        //If user is not logged in,
+        !userLoggedIn
+          // Render the login page,
+          ? <>
             <div id='city-background' />
             <h1 className='app-title' >
               <img src='YetiGetiCash.png' />
               FINANCE USAGE CHARTS KIT
             </h1>
-            < Login userLoggedIn={userLoggedIn} changeLoginState={changeLoginState}/>
+            < Login userLoggedIn={userLoggedIn} changeLoginState={changeLoginState} />
           </>
-        // Otherwise render the Dashboard
-        : <div className='homepage'>
-            <div id='background'/>
+          // Otherwise render the Dashboard
+          : <div className='homepage'>
+            <div id='background' />
             {/*< NavBar />*/}
             < Routes >
               {/* < Route path="/" element={< />}/> */}
-              < Route path="/expenses" element={ < Expenses expensesList={expensesList} changeExpensesList={changeExpensesList}/> }/>
-              < Route path="/income" element={< Incomes incomesList={incomesList} changeIncomesList={changeIncomesList}/>}/>
-              < Route path="/assets" element={<div id="assets">Assets: < img src="yeticrab.jpeg"/> 
-                <br/>
-                <br/>
-                <br/>
-                <br/>
+              < Route path="/expenses" element={< Expenses expensesList={expensesList} changeExpensesList={changeExpensesList} name={name} />} />
+              < Route path="/income" element={< Incomes incomesList={incomesList} changeIncomesList={changeIncomesList} name={name} />} />
+              < Route path="/assets" element={<div id="assets">Assets: < img src="yeticrab.jpeg" />
+                <br />
+                <br />
+                <br />
+                <br />
                 <div>Stanley Chen</div>
                 <div>Alex Cusick</div>
                 <div>Roy Jiang</div>
                 <div>David Kagan</div>
-              </div>}/>
-              < Route path="/" element={< Dashboard expenses={expenses} changeExpenses={changeExpenses} incomes={incomes} changeIncomes={changeIncomes} name={name} changeName={changeName}/>}/>
-              < Route path="*" element={< Error />}/>
+              </div>} />
+              < Route path="/" element={< Dashboard expenses={expenses} changeExpenses={changeExpenses} incomes={incomes} changeIncomes={changeIncomes} name={name} changeName={changeName} />} />
+              < Route path="*" element={< Error />} />
             </ Routes >
-      
+
           </div>
       }
     </main>

@@ -95,6 +95,7 @@ body {
   align-self: center;
   padding: 10vw;
   width: 300px;
+
   img {
     margin: auto;
   }
@@ -135,6 +136,7 @@ body {
     position: absolute;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
+
   .topLayer {
     width: 200%;
     height: 100%;
@@ -204,6 +206,7 @@ body {
     background: #0288d1;
     box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
   }
+
   #login:active,
   #signup:active {
     background: #00669d;
@@ -233,46 +236,57 @@ body {
     animation: slide-left 0.7s;
     animation-fill-mode: forwards;
   }
+
   @keyframes slide-left {
     from {
       margin-left: 50%;
     }
+
     to {
       margin-left: 0%;
     }
   }
+
   .anim-login-slide-left {
     animation: login-slide-left 0.7s;
     animation-fill-mode: forwards;
   }
+
   @keyframes login-slide-left {
     from {
       margin-left: 0%;
     }
+
     to {
       margin-left: 100%;
     }
   }
+
   .anim-slide-right {
     animation: slide-right 0.7s;
     animation-fill-mode: forwards;
   }
+
   @keyframes slide-right {
     from {
       margin-left: 0%;
     }
+
     to {
       margin-left: 50%;
     }
   }
+
   .anim-login-slide-right {
     animation: login-slide-right 0.7s;
     animation-fill-mode: forwards;
   }
+
   @keyframes login-slide-right {
     from {
       margin-left: 100%;
     }
+
     to {
       margin-left: 0%;
     }
@@ -283,6 +297,7 @@ body {
     color: #03a9f4;
     box-shadow: none;
   }
+
   .left .off:hover {
     box-shadow: none;
     color: #03a9f4;
@@ -305,6 +320,7 @@ body {
   width: 95vw;
   display: inline-flex;
   justify-content: space-between;
+
   .greeting {
     font-size: 1.5rem;
     font-weight: bolder;
@@ -334,22 +350,37 @@ body {
     display: inline-flex;
     justify-content: space-evenly;
     width: 98.5vw;
-    div {
-      height: 100%;
+
+    // div,
+    button {
+      // height: 100%;
       // padding: 0.5rem;
       // margin: 0.5rem;
       padding: 0.7rem 1.2rem;
       margin: 0.2rem;
-      border-radius: 15px;
-      .nav-link {
+      background-color: #fff;
+      box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+      border-radius: .75rem;
+      font-size: .75rem;
+      font-weight: 600;
+
+      .nav-link,
+      .nav-button {
         text-decoration: none;
         color: $lightBeige;
         text-align: center;
       }
     }
-    div:hover {
-      background-color: rgba(255, 255, 255, 0.428);
+
+    // div:hover,
+    button:hover {
+      background-color: #b6b8bb;
+      transform: scale(0.98);
+      /* Scaling button to 0.98 to its original size */
+      box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+      /* Lowering the shadow */
       cursor: pointer;
+
       .nav-link {
         color: black;
       }
@@ -375,6 +406,7 @@ body {
       background-color: rgba(255, 255, 255, 0.844);
       border-radius: 15px;
       margin: 3px;
+
       .chartWrapper {
         display: block;
         position: relative;
@@ -445,6 +477,7 @@ body {
         border: 1px solid black;
         padding: 3px;
       }
+
       button {
         width: 100%;
         border: 1px solid transparent;
@@ -455,6 +488,7 @@ body {
         font-size: .75rem;
         font-weight: 600;
       }
+
       button:hover {
         background-color: #b6b8bb;
         transform: scale(0.98);
@@ -462,6 +496,7 @@ body {
         box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
         /* Lowering the shadow */
       }
+
       input,
       option,
       select {
@@ -481,11 +516,10 @@ body {
       text-align: center;
       margin: auto;
     }
-    input {
-    }
 
-    select {
-    }
+    input {}
+
+    select {}
   }
 }
 
