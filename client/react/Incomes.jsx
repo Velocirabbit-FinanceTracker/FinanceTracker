@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import NavBar from './NavBar.jsx';
 import axios from 'axios';
-import DatePicker from "react-datepicker";
+import DatePicker from 'react-datepicker';
 
 const Incomes = (props) => {
-  const { incomesList, changeIncomesList } = props;
+  const { incomesList, changeIncomesList, name } = props;
   // console.log('Props: ', props)
 
   const [userID, setID] = useState('');
@@ -56,21 +56,26 @@ const Incomes = (props) => {
     // console.log(parseInt(e.target.id));
 
     try {
-      if (incomeName.length === 0) {alert('Please enter a valid item'); return;}
-      if (!/^\d+\.{0,1}\d{0,2}$/.test(incomeAmt)) {alert('Please enter a valid amount'); return;}
-      axios.patch(
-        `http://localhost:3002/updateIncome/${parseInt(e.target.id)}`,
-        {
+      if (incomeName.length === 0) {
+        alert('Please enter a valid item');
+        return;
+      }
+      if (!/^\d+\.{0,1}\d{0,2}$/.test(incomeAmt)) {
+        alert('Please enter a valid amount');
+        return;
+      }
+      axios
+        .patch(`http://localhost:3002/updateIncome/${parseInt(e.target.id)}`, {
           item: incomeName,
           value: Number(incomeAmt.replace(/[^0-9.-]+/g, '')),
           recurring: recurring,
-        }
-      );
+        })
+        .then((res, err) => {
+          setEdited(!edited);
+        });
     } catch (error) {
       console.log('Edit Error');
     }
-
-    setEdited(!edited);
     cancelEdit();
   };
 
@@ -130,7 +135,7 @@ const Incomes = (props) => {
         amount: amount,
         recurrence: recurrence,
         id: userID,
-        created: startDate
+        created: startDate,
       })
       .then((res) => {
         console.log('Post Success true!');
@@ -158,7 +163,7 @@ const Incomes = (props) => {
           <span className="incomeName">{income.item} </span>
           <span className="incomeAmt">{income.value}</span>
           <span className="recurring">Occurs {income.recurring}</span>
-          <span className="incomeDate">{income.created.slice(0,10)}</span>
+          <span className="incomeDate">{income.created.slice(0, 10)}</span>
           <span>
             <button
               id={income._id}
@@ -205,7 +210,7 @@ const Incomes = (props) => {
               <option value="Monthly">Monthly</option>
               <option value="Annually">Annually</option>
             </select>
-            <span className="incomeDate">{income.created.slice(0,10)}</span>
+            <span className="incomeDate">{income.created.slice(0, 10)}</span>
 
             <span>
               <button id={income._id} type="submit" className="editButton">
@@ -228,47 +233,58 @@ const Incomes = (props) => {
     }
   }
 
-
   // renders all the income a user has and the input fields for adding a new income
   return (
-    <div className="income-page">
-      <NavBar />
-      <div className="history-container">{incomeArr}</div>
-      <div className="input-div">
-        <label>Income Name: </label>
-        <input
-          type="text"
-          name="incomeName"
-          placeholder="Income item"
-          id="incomeItem"
-          onChange={(e) => setItem(e.target.value)}
-        />
-        <label>Amount: </label>
-        <input
-          type="text"
-          name="incomeAmount"
-          placeholder="Income amount"
-          id="incomeAmt"
-          onChange={(e) => setAmt(e.target.value)}
-        />
-        <label>Date: </label>
-        <DatePicker selected={startDate} onChange={(date) => setStartDate(date)}/>
-        <label>Reoccuring? </label>
-        <select
-          name="reoccurence"
-          id="expenseRec"
-          defaultValue="-"
-          onChange={(e) => setRec(e.target.value)}>
-          <option value="Once">Once</option>
-          <option value="Daily">Daily</option>
-          <option value="Weekly">Weekly</option>
-          <option value="Monthly">Monthly</option>
-          <option value="Annually">Annually</option>
-
-        </select>
-        <button onClick={addIncome}>Add Income</button>
+    <>
+      {/* renders the app logo and welcome message above navBar */}
+      <div className="aboveNav">
+        <span className="titleName">Finance Tracker</span>
+        <span className="greeting">Hello, {name}</span>
       </div>
-    </div>
+
+      {/* rendering the navBar */}
+      <div className="income-page">
+        <NavBar />
+        <div className="history-container">{incomeArr}</div>
+        <div className="input-div">
+          <label>Income Name: </label>
+          <input
+            type="text"
+            name="incomeName"
+            placeholder="Income item"
+            id="incomeItem"
+            onChange={(e) => setItem(e.target.value)}
+          />
+          <label>Amount: </label>
+          <input
+            type="text"
+            name="incomeAmount"
+            placeholder="Income amount"
+            id="incomeAmt"
+            onChange={(e) => setAmt(e.target.value)}
+          />
+          <label>Date: </label>
+          <DatePicker
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+          />
+          <label>Reoccuring? </label>
+          <select
+            name="reoccurence"
+            id="expenseRec"
+            defaultValue="-"
+            onChange={(e) => setRec(e.target.value)}
+          >
+            <option value="Once">Once</option>
+            <option value="Daily">Daily</option>
+            <option value="Weekly">Weekly</option>
+            <option value="Monthly">Monthly</option>
+            <option value="Annually">Annually</option>
+          </select>
+          <button onClick={addIncome}>Add Income</button>
+        </div>
+      </div>
+    </>
   );
 };
 

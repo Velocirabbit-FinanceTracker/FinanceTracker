@@ -3,7 +3,7 @@
 @import url(https://fonts.googleapis.com/css?family=Bungee+Outline:regular);
 @import url(https://fonts.googleapis.com/css?family=Bebas+Neue:regular);
 @import url(https://fonts.googleapis.com/css?family=Encode+Sans:400,500,600,700,800,900);
-@import "react-datepicker/dist/react-datepicker.css";
+@import 'react-datepicker/dist/react-datepicker.css';
 
 $beige: #e0dcd1;
 $lightBeige: #f2eee3;
@@ -193,7 +193,6 @@ body {
     box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
   }
 
-
   #goRight,
   #goLeft {
     color: #03a9f4;
@@ -317,8 +316,9 @@ body {
     display: inline-flex;
     justify-content: space-evenly;
     width: 98.5vw;
-    div {
-      height: 100%;
+    // div,
+    button {
+      // height: 100%;
       // padding: 0.5rem;
       // margin: 0.5rem;
       padding: 0.7rem 1.2rem;
@@ -330,7 +330,8 @@ body {
         text-align: center;
       }
     }
-    div:hover {
+    // div:hover,
+    button:hover {
       background-color: rgba(255, 255, 255, 0.428);
       .nav-link {
         color: black;
@@ -372,7 +373,7 @@ body {
       display: flex;
       align-items: center;
       gap: 20px;
-      
+
       select {
         /* Reset Select */
         appearance: none;
@@ -386,11 +387,10 @@ body {
       .select {
         position: relative;
         display: flex;
-        border-radius: .25em;
+        border-radius: 0.25em;
         overflow: hidden;
         background-color: #c4cfbb;
       }
-      
     }
 
     .expenses {

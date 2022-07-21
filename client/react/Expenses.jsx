@@ -4,7 +4,7 @@ import axios from 'axios';
 import DatePicker from "react-datepicker";
 
 const Expenses = (props) => {
-    const {expensesList, changeExpensesList} = props;
+    const {expensesList, changeExpensesList, name} = props;
     const [userID, setID] = useState('');
     const [successfulPost, postSuccess] = useState('')
     const [deleted, setDeleted] = useState(false);
@@ -217,6 +217,13 @@ const Expenses = (props) => {
   }
     // renders all the expenses a user has and the input fields for adding a new expense
     return (
+      <>  
+      {/* renders the app logo and welcome message above navBar */ }
+      <div className='aboveNav'>
+          <span className="titleName">Finance Tracker</span>
+          <span className="greeting">Hello, { name }</span>
+      </div>
+      {/* rendering the navBar */}
         <div className='expenses-page'>
             < NavBar />
             <div className='history-container'>{expenseArr}</div>
@@ -239,7 +246,8 @@ const Expenses = (props) => {
                 </select>
                 <button onClick={addExpense}>Add Expense</button>
             </div>
-        </div>    
+        </div>  
+        </>  
     )
 }
 
