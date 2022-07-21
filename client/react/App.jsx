@@ -52,8 +52,8 @@ const App = () => {
             {/*< NavBar />*/}
             < Routes >
               {/* < Route path="/" element={< />}/> */}
-              < Route path="/expenses" element={ < Expenses expensesList={expensesList} changeExpensesList={changeExpensesList}/> }/>
-              < Route path="/income" element={< Incomes incomesList={incomesList} changeIncomesList={changeIncomesList}/>}/>
+              < Route path="/expenses" element={ < Expenses expensesList={expensesList} changeExpensesList={changeExpensesList} name={name}/> }/>
+              < Route path="/income" element={< Incomes incomesList={incomesList} changeIncomesList={changeIncomesList} name={name}/>}/>
               < Route path="/assets" element={<div id="assets">Assets: < img src="yeticrab.jpeg"/> 
                 <br/>
                 <br/>
