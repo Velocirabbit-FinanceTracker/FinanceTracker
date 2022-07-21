@@ -204,6 +204,12 @@ body {
     background: #0288d1;
     box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
   }
+  #login:active,
+  #signup:active {
+    background: #00669d;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+
 
   #goRight,
   #goLeft {
@@ -433,7 +439,7 @@ body {
     .expenseItem,
     .incomeItem {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 80px 80px;
+      grid-template-columns: 1fr 1fr 1fr 1fr 80px 80px;
 
       span {
         border: 1px solid black;
