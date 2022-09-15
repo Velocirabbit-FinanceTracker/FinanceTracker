@@ -1,7 +1,7 @@
 <p align="center" width="100%">
   <h1 align="center" color="black" style="font-family:RALEWAY">Finance Tracker</h1>
 <p align="center" width ="100%">
-  A tool to analyze your expenses.<br>
+  A tool to manage your expenses.<br>
  </p>
  
  <h2> About the Project</h2>
